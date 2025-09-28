@@ -1,0 +1,9 @@
+<h2>Eliminar trabajador</h2>
+
+<p>¿Estás seguro que deseas eliminar a "{{ object.nombre }}"?</p>
+
+<form method="post">
+  {% csrf_token %}
+  <button type="submit">Sí, eliminar</button>
+  <a href="{% url 'lista_trabajadores' %}">Cancelar</a>
+</form>

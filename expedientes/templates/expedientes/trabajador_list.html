@@ -1,0 +1,16 @@
+<h2>Lista de trabajadores</h2>
+
+<a href="{% url 'crear_trabajador' %}">➕ Nuevo trabajador</a>
+
+<ul>
+  {% for t in trabajadores %}
+    <li>
+      {{ t.nombre }} - {{ t.puesto }}
+      [<a href="{% url 'detalle_trabajador' t.id %}">Detalle</a>]
+      [<a href="{% url 'editar_trabajador' t.id %}">Editar</a>]
+      [<a href="{% url 'eliminar_trabajador' t.id %}">Eliminar</a>]
+    </li>
+  {% empty %}
+    <li>No hay trabajadores registrados</li>
+  {% endfor %}
+</ul>
