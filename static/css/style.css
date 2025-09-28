@@ -1,0 +1,108 @@
+/* Paleta pastel rosa */
+:root {
+  --rosa: #f8c8dc;
+  --rosa-oscuro: #e5a6c6;
+  --gris-claro: #f9f9f9;
+  --gris: #666;
+  --blanco: #fff;
+}
+
+body {
+  font-family: "Segoe UI", sans-serif;
+  background-color: var(--gris-claro);
+  color: var(--gris);
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+p {
+    text-align: center;
+}
+
+header h1 {
+  margin: 0;
+  color: var(--gris);
+}
+
+a {
+  margin-right: 15px;
+  text-decoration: none;
+  color: var(--gris);
+  font-weight: bold;
+}
+
+a:hover {
+  color: var(--rosa-oscuro);
+}
+
+main {
+  max-width: 800px;
+  margin: 20px auto;
+  background: var(--blanco);
+  padding: 50px;
+  border-radius: 10px;
+  box-shadow: 0px 4px 6px rgba(0,0,0,0.1);
+}
+
+h3 {
+    text-align: center;
+    margin: 0;
+}
+
+h2 {
+  color: var(--rosa-oscuro);
+  border-bottom: 2px solid var(--rosa);
+  padding-bottom: 5px;
+    text-align: center;
+}
+
+button, input[type="submit"] {
+  background-color: var(--rosa);
+  border: none;
+  padding: 10px 15px;
+  border-radius: 5px;
+  cursor: pointer;
+  font-weight: bold;
+}
+
+button:hover, input[type="submit"]:hover {
+  background-color: var(--rosa-oscuro);
+  color: var(--blanco);
+}
+
+ul {
+  list-style: none;
+  padding: 0;
+}
+
+ul li {
+  padding: 15px;
+  border-bottom: 1px solid #eee;
+}
+
+li a {
+    color: var(--rosa-oscuro);
+    text-decoration: underline;
+}
+
+li a:hover {
+    color: var(--gris);
+}
+
+footer {
+  text-align: center;
+  margin-top: 30px;
+  padding: 10px;
+  font-size: 0.9em;
+  color: var(--gris);
+}
+
+form{
+    margin-bottom: 15px;
+    text-align: center;
+}

@@ -1,9 +1,15 @@
+{% extends 'expedientes/base.html' %}
+
+{% block title %}Trabajador{% endblock %}
+
+{% block content %}
 <h2>{% if object %}Editar{% else %}Nuevo{% endif %} trabajador</h2>
 <!-- formulario de trabajadores -->
 <form method="post">
   {% csrf_token %}
   {{ form.as_p }}
   <button type="submit">Guardar</button>
+  <a href="{% url 'lista_trabajadores' %}">Volver a la lista</a>
 </form>
 
-<a href="{% url 'lista_trabajadores' %}">Volver a la lista</a>
+{% endblock %}
