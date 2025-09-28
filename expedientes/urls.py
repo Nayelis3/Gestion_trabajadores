@@ -9,6 +9,7 @@ from .views import (
 )
 
 urlpatterns = [
+    #agregando todas las urls para las vistas
     path('', TrabajadorListView.as_view(), name='lista_trabajadores'),
     path('trabajador/nuevo/', TrabajadorCreateView.as_view(), name="crear_trabajador"),
     path('trabajador/<int:pk>/documentos', CargarMultiplesArchivosView.as_view(), name='cargar_documentos'),

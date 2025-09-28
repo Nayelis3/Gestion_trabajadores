@@ -1,5 +1,5 @@
 <h2>{% if object %}Editar{% else %}Nuevo{% endif %} trabajador</h2>
-
+<!-- formulario de trabajadores -->
 <form method="post">
   {% csrf_token %}
   {{ form.as_p }}

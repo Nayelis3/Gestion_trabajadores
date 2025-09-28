@@ -24,6 +24,7 @@ class TrabajadorDetailView(DetailView):
     template_name = "expedientes/trabajador_detail.html"
     context_object_name = "trabajador"
 
+
 class TrabajadorListView(ListView):
     model = Trabajador
     template_name = "expedientes/trabajador_list.html"
