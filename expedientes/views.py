@@ -3,6 +3,7 @@ from django.views.generic.edit import FormView
 from django.shortcuts import get_object_or_404, redirect
 from .models import Trabajador, Documento
 from .forms import  CargarMultiplesArchivosForm
+from django.views.generic.detail import DetailView
 
 class CargarMultiplesArchivosView(FormView):
     template_name = "expedientes/cargar_documentos.html"
@@ -15,3 +16,8 @@ class CargarMultiplesArchivosView(FormView):
         for archivo in archivos:
             Documento.objects.create(trabajador=trabajador, archivo=archivo)
         return redirect("detalle_trabajador", pk=trabajador_id)
+
+class TrabajadorDetailView(DetailView):
+    model = Trabajador
+    template_name = "expedientes/trabajador_detail.html"
+    context_object_name = "trabajador"

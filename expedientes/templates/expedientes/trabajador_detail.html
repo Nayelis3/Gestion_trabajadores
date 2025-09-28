@@ -1,0 +1,19 @@
+<h2>Detalle de trabajador</h2>
+
+<p><strong>Nombre:</strong>{{ trabajador.nombre }} </p>
+<p><strong>Puesto:</strong>{{ trabajador.puesto }} </p>
+
+<h3>Documentos</h3>
+<ul>
+    {% for doc in trabajador.documentos.all %}
+        <li>
+            <a href="{{ doc.archivo.url }}" target="_blank">{{ doc.archivo.name }}</a>
+        </li>
+        {% empty %}
+            <li>
+                No hay documentos asociados.
+            </li>
+    {% endfor %}
+</ul>
+
+<a href="{% url 'cargar_documentos' trabajador.id %}">Subir mas documentos</a>
