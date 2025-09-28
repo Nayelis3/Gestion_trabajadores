@@ -1,4 +1,5 @@
 from django.db import models
+import os
 
 class Trabajador(models.Model):
     nombre = models.CharField(max_length=100)
@@ -15,3 +16,9 @@ class Documento(models.Model):
 
     def __str__(self):
         return f"Documento de {self.trabajador.nombre}: {self.archivo.name}"
+
+    def delete(self, *args, **kwargs):
+        # borrar archivo físico si existe
+        if self.archivo and os.path.isfile(self.archivo.path):
+            os.remove(self.archivo.path)
+        super().delete(*args, **kwargs)

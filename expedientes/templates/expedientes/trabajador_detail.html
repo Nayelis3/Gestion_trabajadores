@@ -13,6 +13,7 @@
     {% for doc in trabajador.documentos.all %}
         <li>
             <a href="{{ doc.archivo.url }}" target="_blank">{{ doc.archivo.name }}</a>
+             - <a href="{% url 'eliminar_documento' doc.id %}">Eliminar</a>
         </li>
         {% empty %}
             <li>

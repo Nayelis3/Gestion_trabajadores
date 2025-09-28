@@ -49,3 +49,11 @@ class TrabajadorDeleteView(DeleteView):
     model = Trabajador
     template_name = "expedientes/trabajador_confirm_delete.html"
     success_url = reverse_lazy("lista_trabajadores")
+
+
+class DocumentoDeleteView(DeleteView):
+    model = Documento
+    template_name = "expedientes/documento_confirm_delete.html"
+
+    def get_success_url(self):
+        return reverse_lazy("detalle_trabajador", kwargs={"pk": self.object.trabajador.id})

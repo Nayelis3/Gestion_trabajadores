@@ -6,6 +6,7 @@ from .views import (
     TrabajadorCreateView,
     TrabajadorUpdateView,
     TrabajadorDeleteView,
+    DocumentoDeleteView
 )
 
 urlpatterns = [
@@ -16,5 +17,6 @@ urlpatterns = [
     path('trabajador/<int:pk>/', TrabajadorDetailView.as_view(), name='detalle_trabajador'),
     path('trabajador/<int:pk>/editar/', TrabajadorUpdateView.as_view(), name='editar_trabajador'),
     path('trabajador/<int:pk>/eliminar/', TrabajadorDeleteView.as_view(), name='eliminar_trabajador'),
+    path('documento/<int:pk>/eliminar/', DocumentoDeleteView.as_view(), name='eliminar_documento'),
 
 ]
